@@ -1,4 +1,5 @@
 version: '3'
+name: traefik
 
 services:
   reverse-proxy:
@@ -6,6 +7,7 @@ services:
     image: traefik:v2.10
     # Enables the web UI and tells Traefik to listen to docker
     container_name: "traefik"
+    restart: unless-stopped
     command:
       #- "--log.level=DEBUG"
       - "--api.insecure=true"
